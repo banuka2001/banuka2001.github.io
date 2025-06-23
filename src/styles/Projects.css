@@ -1,0 +1,149 @@
+.projects-section {
+    position: relative;
+    background-color: #ffffff;
+    padding: 4rem 2rem;
+    z-index: 1;
+}
+  
+.projects-section h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+  
+.project-card {
+    background-color: white;
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 520px;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+  
+.project-card .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    background-color: #e9ecef;
+}
+  
+.project-card .card-body {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+  
+.project-card .card-title {
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+  
+.project-card .card-text {
+    color: #6c757d;
+}
+
+.tech-stack {
+    padding: 0;
+    margin: 20px 0;
+    list-style: none;
+}
+
+.tech-stack li {
+    display: inline-block;
+    background-color: #e7e5ff;
+    color: #5a4fcf;
+    padding: 5px 12px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+  
+.view-project-link {
+    color: #5a4fcf;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.3s ease;
+    margin-top: auto;
+}
+
+.view-project-link:hover {
+    color: #413a9a;
+}
+  
+.view-project-link svg {
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+}
+
+.view-project-link:hover svg {
+    transform: translateX(3px);
+}
+  
+.carousel-item img {
+    height: 400px;
+    object-fit: cover;
+}
+  
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+/* Custom Carousel Styles */
+.carousel-inner {
+    padding: 1em 6rem;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    display: none; /* Hide the default Bootstrap icons */
+}
+
+.bi-caret-left-fill,
+.bi-caret-right-fill {
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 2.5rem;
+    transition: color 0.3s ease;
+}
+
+.bi-caret-left-fill:hover,
+.bi-caret-right-fill:hover {
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.projects-container {
+    position: relative;
+    background-color: #ffffff;
+    padding: 4rem 2rem;
+}
+
+.projects-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+    color: #343a40;
+}
+
+.projects-wrapper {
+    position: relative;
+    z-index: 1;
+}
+

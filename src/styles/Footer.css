@@ -1,0 +1,34 @@
+@import './partials/_variables.css';
+
+.footer-light {
+  background-color: var(--app-footer-bg-light);
+  padding: 20px 0;
+  color: var(--app-footer-text-light);
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.social-icons {
+  margin-bottom: 15px;
+}
+
+.social-icons a {
+  color: var(--app-footer-text-light);
+  margin: 0 10px;
+  font-size: 24px;
+  transition: color 0.3s;
+}
+
+.social-icons a:hover {
+  color: var(--bs-primary);
+}
+
+.copyright p {
+  margin: 0;
+  font-size: 14px;
+} 

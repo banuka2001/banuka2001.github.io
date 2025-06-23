@@ -1,0 +1,65 @@
+.skills-page {
+    padding: 40px 20px;
+    background-color: transparent; /* A light background similar to the hero section */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.skills-container-card {
+    width: 100%;
+    max-width: 1400px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.skills-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .skills-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 992px) {
+    .skills-page {
+        padding: 20px 10px;
+    }
+    .skills-container-card {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+    .skills-page-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-page-title {
+        font-size: 2rem;
+    }
+    .skills-container-card {
+        padding: 20px;
+    }
+} 

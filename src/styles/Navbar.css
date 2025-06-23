@@ -1,0 +1,93 @@
+@import './partials/_variables.css';
+
+.navbar {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-top: 3px solid var(--app-navbar-top-bar);
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar .navbar-brand .text-primary {
+    color: var(--logo-text-primary) !important;
+  }
+  
+  .navbar .navbar-brand .text-warning {
+    color: var(--logo-text-warning) !important;
+  }
+  
+
+  
+  .navbar .navbar-nav .nav-link {
+    color: var(--app-nav-link-color);
+    font-weight: 500;
+  }
+  
+  .navbar .navbar-nav .nav-link.active,
+  .navbar .navbar-nav .nav-link:hover {
+    color: var(--app-nav-link-hover-color);
+  }
+  
+  .navbar .btn-outline-secondary {
+    border-color: var(--bs-secondary);
+    color: var(--bs-secondary);
+  }
+  
+  .navbar .btn-warning {
+    background-color: var(--app-btn-warning-bg);
+    border-color: var(--app-btn-warning-bg);
+  }
+  
+  body.dark .navbar {
+    background-color: var(--surface-dark) !important;
+    color: var(--text-primary-dark);
+    border-top-color: var(--bs-primary);
+  }
+  
+  body.dark .navbar .navbar-nav .nav-link {
+    color: var(--text-primary-dark) !important;
+  }
+  
+  body.dark .navbar .btn-outline-secondary {
+    color: var(--text-secondary-dark);
+    border-color: var(--text-secondary-dark);
+  }
+  
+  body.dark .navbar .btn-outline-secondary:hover {
+    color: var(--bg-dark);
+    background-color: var(--text-secondary-dark);
+  }
+
+  /* Toggler icon transition start */
+  
+  .toggler-icon-wrapper {
+      display: inline-block;
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .toggler-icon-wrapper.is-open {
+        transform: rotate(180deg);
+    }
+    /* Toggler icon transition end */
+  
+  @media (max-width: 991.98px) {
+    .navbar-collapse .navbar-nav {
+      margin-left: 0 !important;
+      text-align: right !important;
+    }
+
+    .navbar-collapse .d-flex.gap-3 {
+      justify-content: flex-start !important;
+      margin-top: 1rem;
+    }
+  }
+  
+@media (min-width: 992px) {
+  .navbar-nav {
+    margin-left: auto !important;
+  }
+}
+  

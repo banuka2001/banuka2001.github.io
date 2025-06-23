@@ -1,0 +1,86 @@
+.get-in-touch-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: #fff;
+    font-family: 'Poppins', sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.get-in-touch-container h2 {
+    color: #2c3e50;
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+}
+
+.contact-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    color: #34495e;
+    font-size: 1rem;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #bdc3c7;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    transition: border-color 0.3s ease;
+    background-color: #ffffff;
+    color: #2c3e50;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #3498db;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.submit-btn {
+    border-radius: 8px;
+    border: 1px solid transparent;
+    padding: 0.6em 1.2em;
+    font-size: 1em;
+    font-weight: 500;
+    font-family: inherit;
+    background-color: #1a1a1a;
+    cursor: pointer;
+    transition: border-color 0.25s;
+  }
+  .submit-btn:hover {
+    border-color: #646cff;
+  }
+  .submit-btn:focus,
+  .submit-btn:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+  
+/* Responsive Design */
+@media (max-width: 768px) {
+    .get-in-touch-container h2 {
+        font-size: 2rem;
+    }
+
+    .submit-btn {
+        width: 100%;
+    }
+} 

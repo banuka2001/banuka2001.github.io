@@ -1,0 +1,85 @@
+.about-me {
+    background: url(/src/assets/images/background.svg) repeat 0% 10%;
+}
+
+.about-me-container {
+    padding: 4rem 2rem;
+}
+
+.about-me-pin-container {
+    position: relative;
+    height: 350vh;
+}
+
+.about-me-content-wrapper {
+    position: sticky;
+    top: 15vh;
+    width: 100%;
+    z-index: 10;
+}
+
+.about-me-title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+    color: #343a40;
+}
+
+.about-me-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.about-me-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    padding: 1rem;
+}
+
+.about-me-content {
+    padding: 2rem;
+}
+
+.about-me-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #495057;
+    margin-bottom: 1.5rem;
+}
+
+.about-me-content p:last-child {
+    margin-bottom: 0;
+}
+
+.about-me-content .intro-skills {
+    font-size: 1.2rem;
+}
+
+.intro-greeting {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.scroll-text {
+  white-space: pre-line;
+}
+
+@media (max-width: 767px) {
+    .about-me-pin-container {
+        height: auto;
+    }
+    .about-me-content-wrapper {
+        position: static;
+    }
+    .about-me-content-wrapper .row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-me-content {
+        padding: 1rem 0;
+    }
+} 
