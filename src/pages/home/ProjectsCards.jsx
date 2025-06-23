@@ -61,10 +61,38 @@ const chunkProjects = (arr, size) =>
 
 const ProjectsCards = () => {
     const width = useWindowWidth();
-    const isMediumScreen = width < 1230;
     const isMobile = width < 768;
+    const isTablet = width >= 768 && width < 1230;
 
-  if (isMediumScreen) {
+  if (isMobile) {
+    return (
+        <section id="projectCards" className="projects-section">
+          <Container>
+            <h2 className='text-black'>My Projects</h2>
+            <Carousel 
+              indicators={false}
+              prevIcon={<span aria-hidden="true" className="bi bi-caret-left-fill" />}
+              nextIcon={<span aria-hidden="true" className="bi bi-caret-right-fill" />}
+            >
+              {projectCards.map((project, idx) => (
+                <Carousel.Item key={idx}>
+                  <Row className="g-4 d-flex justify-content-center align-items-center" style={{ minHeight: '350px' }}>
+                    <Col xs={10} className="text-center">
+                        <h3 style={{ fontSize: '16pt', color: 'black', marginBottom: '1.5rem' }}>{project.title}</h3>
+                        <a href={project.liveUrl} className="view-project-link" target="_blank" rel="noopener noreferrer">
+                            View Project
+                        </a>
+                    </Col>
+                  </Row>
+                </Carousel.Item>
+              ))}
+            </Carousel>
+          </Container>
+        </section>
+      );
+  }
+
+  if (isTablet) {
     return (
         <section id="projectCards" className="projects-section">
           <Container>
@@ -82,11 +110,9 @@ const ProjectsCards = () => {
                           <Card.Img variant="top" src={project.imageUrl} />
                           <Card.Body>
                             <Card.Title>{project.title}</Card.Title>
-                            {!isMobile && (
-                                <Card.Text>
-                                  {project.description}
-                                </Card.Text>
-                            )}
+                            <Card.Text>
+                              {project.description}
+                            </Card.Text>
                             <ul className="tech-stack">
                               {project.tech.map((t, i) => <li key={i}>{t}</li>)}
                             </ul>
