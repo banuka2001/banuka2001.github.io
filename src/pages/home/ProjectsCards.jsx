@@ -1,4 +1,5 @@
 import { Container, Row, Col, Card, Carousel } from 'react-bootstrap';
+import { useState, useEffect } from 'react';
 
 import '../../styles/Projects.css';
 
@@ -40,6 +41,23 @@ const projectCards = [
     },
   ];
 
+const useIsMobile = (breakpoint = 768) => {
+    const [isMobile, setIsMobile] = useState(window.innerWidth < breakpoint);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < breakpoint);
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [breakpoint]);
+
+    return isMobile;
+};
+
 // Helper function to chunk projects into groups
 const chunkProjects = (arr, size) =>
   Array.from({ length: Math.ceil(arr.length / size) }, (v, i) =>
@@ -47,7 +65,48 @@ const chunkProjects = (arr, size) =>
   );
 
 const ProjectsCards = () => {
-    const projectChunks = chunkProjects(projectCards, 3); // Group projects by 3
+    const isMobile = useIsMobile();
+
+  if (isMobile) {
+    return (
+        <section id="projectCards" className="projects-section">
+          <Container>
+            <h2 className='text-black'>My Projects</h2>
+            <Carousel 
+              indicators={false}
+              prevIcon={<span aria-hidden="true" className="bi bi-caret-left-fill" />}
+              nextIcon={<span aria-hidden="true" className="bi bi-caret-right-fill" />}
+            >
+              {projectCards.map((project, idx) => (
+                <Carousel.Item key={idx}>
+                  <Row className="g-4 d-flex justify-content-center">
+                    <Col xs={10}>
+                        <Card className="project-card h-100">
+                          <Card.Img variant="top" src={project.imageUrl} />
+                          <Card.Body>
+                            <Card.Title>{project.title}</Card.Title>
+                            <Card.Text>
+                              {project.description}
+                            </Card.Text>
+                            <ul className="tech-stack">
+                              {project.tech.map((t, i) => <li key={i}>{t}</li>)}
+                            </ul>
+                            <a href={project.liveUrl} className="view-project-link" target="_blank" rel="noopener noreferrer">
+                              View Project
+                            </a>
+                          </Card.Body>
+                        </Card>
+                    </Col>
+                  </Row>
+                </Carousel.Item>
+              ))}
+            </Carousel>
+          </Container>
+        </section>
+      );
+  }
+
+  const projectChunks = chunkProjects(projectCards, 3); // Group projects by 3
 
   return (
     <section id="projectCards" className="projects-section">
@@ -63,7 +122,7 @@ const ProjectsCards = () => {
               <Row xs={1} md={2} lg={3} className="g-4">
                 {chunk.map((project, idx) => (
                   <Col key={idx}>
-                    <Card className="project-card">
+                    <Card className="project-card h-100">
                       <Card.Img variant="top" src={project.imageUrl} />
                       <Card.Body>
                         <Card.Title>{project.title}</Card.Title>
