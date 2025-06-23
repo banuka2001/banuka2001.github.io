@@ -41,21 +41,16 @@ const projectCards = [
     },
   ];
 
-const useIsMobile = (breakpoint = 768) => {
-    const [isMobile, setIsMobile] = useState(window.innerWidth < breakpoint);
+const useWindowWidth = () => {
+    const [width, setWidth] = useState(window.innerWidth);
 
     useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth < breakpoint);
-        };
-
+        const handleResize = () => setWidth(window.innerWidth);
         window.addEventListener('resize', handleResize);
-        return () => {
-            window.removeEventListener('resize', handleResize);
-        };
-    }, [breakpoint]);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
-    return isMobile;
+    return width;
 };
 
 // Helper function to chunk projects into groups
@@ -65,9 +60,11 @@ const chunkProjects = (arr, size) =>
   );
 
 const ProjectsCards = () => {
-    const isMobile = useIsMobile();
+    const width = useWindowWidth();
+    const isMediumScreen = width < 1230;
+    const isMobile = width < 768;
 
-  if (isMobile) {
+  if (isMediumScreen) {
     return (
         <section id="projectCards" className="projects-section">
           <Container>
@@ -80,14 +77,16 @@ const ProjectsCards = () => {
               {projectCards.map((project, idx) => (
                 <Carousel.Item key={idx}>
                   <Row className="g-4 d-flex justify-content-center">
-                    <Col xs={10}>
+                    <Col xs={10} md={8} lg={6}>
                         <Card className="project-card h-100">
                           <Card.Img variant="top" src={project.imageUrl} />
                           <Card.Body>
                             <Card.Title>{project.title}</Card.Title>
-                            <Card.Text>
-                              {project.description}
-                            </Card.Text>
+                            {!isMobile && (
+                                <Card.Text>
+                                  {project.description}
+                                </Card.Text>
+                            )}
                             <ul className="tech-stack">
                               {project.tech.map((t, i) => <li key={i}>{t}</li>)}
                             </ul>
