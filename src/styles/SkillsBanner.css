@@ -21,7 +21,7 @@
 
 .skills-track {
     display: flex;
-    animation: scroll 30s linear infinite;
+    animation: scroll 5s linear infinite;
 }
 
 .skills-container:hover .skills-track {
