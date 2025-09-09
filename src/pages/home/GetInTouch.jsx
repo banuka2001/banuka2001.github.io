@@ -17,18 +17,34 @@ const GetInTouch = () => {
         }));
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        // Backend submission logic will go here
-        console.log('Form data submitted:', formData);
-        alert('Thank you for your message!');
-        // Reset form after submission
-        setFormData({
-            fullName: '',
-            email: '',
-            subject: '',
-            message: ''
-        });
+        try {
+            const response = await fetch('http://localhost:5001/api/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                console.log('Form data submitted successfully');
+                alert('Thank you for your message!');
+                // Reset form after submission
+                setFormData({
+                    fullName: '',
+                    email: '',
+                    subject: '',
+                    message: ''
+                });
+            } else {
+                alert('Failed to send message. Please try again later.');
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            alert('An error occurred. Please try again later.');
+        }
     };
 
     return (

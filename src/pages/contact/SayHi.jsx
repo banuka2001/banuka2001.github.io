@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../styles/SayHi.css';
-import myImg from '../../assets/images/SayHi.jpg';
+import myImg from '../../assets/images/SayHi.png';
 
 import { FaFacebookF, FaTwitter, FaGithub, FaLinkedinIn } from 'react-icons/fa';
 

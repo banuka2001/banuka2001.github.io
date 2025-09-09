@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import "../../styles/AboutMe.css";
-import AboutMeImage from "../../assets/images/AboutMe-Img.jpg";
+import AboutMeImage from "../../assets/images/AboutMe-Img.png";
 // import AboutMeImage from "../../assets/images/AboutMe.svg";
 import ScrollControlledTyping from "../../components/ScrollControlledTyping";
 
